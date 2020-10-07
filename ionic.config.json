@@ -1,5 +1,7 @@
 {
   "name": "RoomChat",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
