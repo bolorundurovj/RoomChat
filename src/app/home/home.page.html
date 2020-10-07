@@ -8,8 +8,8 @@
 
 <ion-content [fullscreen]="true">
   <ion-item>
-    <ion-label stacked> Set Nickname</ion-label>
-    <ion-input type="text" [(ngModel)]="nickname" placeholder="Nickname"></ion-input>
+    <ion-label position="floating"> Set Nickname</ion-label>
+    <ion-input type="text" class="ion-padding ion-text-center" [(ngModel)]="nickname" placeholder="Nickname"></ion-input>
   </ion-item>
-  <ion-button full (click)="joinChat()" [disabled]="nickname === ''">Join Chat as {{nickname}}</ion-button>
+  <ion-button expand="block" class="ion-padding" (click)="joinChat()" [disabled]="nickname === ''">Join Chat as {{nickname}}</ion-button>
 </ion-content>

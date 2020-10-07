@@ -7,15 +7,15 @@
 <ion-content>
   <ion-grid>
     <ion-row *ngFor="let message of messages">
-      <ion-col col-9 *ngIf="message.from !== nickname" class="message" [ngClass]="{'my_message': message.from === nickname, 'other_message': message.from !== nickname}">
-        <span class="user_name">{{message.from}}</span>
+      <ion-col size="9" *ngIf="message.from !== nickname" class="message" [ngClass]="{'my_message': message.from === nickname, 'other_message': message.from !== nickname}">
+        <span class="user_name"><b>{{message.from}}</b></span><br>
         <span>{{message.text}}</span>
-        <span class="time">{{message.created | date}}</span>
+        <span class="time">{{message.created}}</span>
       </ion-col>
-      <ion-col offset-3 col-9 *ngIf="message.from === nickname" class="message" [ngClass]="{'my_message': message.from === nickname, 'other_message': message.from !== nickname}">
-        <span class="user_name">{{message.from}}</span>
+      <ion-col offset="3" size="9" *ngIf="message.from === nickname" class="message" [ngClass]="{'my_message': message.from === nickname, 'other_message': message.from !== nickname}">
+        <span class="user_name"><b>{{message.from}}</b></span><br>
         <span>{{message.text}}</span>
-        <span class="time">{{message.created | date}}</span>
+        <span class="time">{{message.created}}</span>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -24,13 +24,14 @@
 <ion-footer>
   <ion-toolbar>
     <ion-row class="message_row">
-      <ion-col col-9>
-        <ion-item no-lines>
+      <ion-col size="12">
+        <ion-item >
           <ion-input type="text" placeholder="Message" #messag [(ngModel)]="message"></ion-input>
+          <ion-button color="primary" clear (click)="sendMessage(messag.value)" [disabled]="message === ''">
+            <ion-icon name="send" slot="end"></ion-icon>
+            <ion-label>Send</ion-label>
+          </ion-button>
         </ion-item>
-      </ion-col>
-      <ion-col col-3>
-        <ion-button color="primary" clear (click)="sendMessage(messag.value)" [disabled]="message === ''">Send</ion-button>
       </ion-col>
     </ion-row>
   </ion-toolbar>

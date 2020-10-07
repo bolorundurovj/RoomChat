@@ -20,8 +20,4 @@ export class HomePage {
     this.router.navigate(['chat-room'], {queryParams: {nickname: this.nickname}} )
   }
 
-  ionViewWillLeave() {
-    this.socket.disconnect();
-  }
-
 }

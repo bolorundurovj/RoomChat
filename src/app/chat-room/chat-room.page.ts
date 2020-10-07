@@ -38,7 +38,7 @@ export class ChatRoomPage implements OnInit {
 
   ngOnInit() {}
 
-  ionViewWillLeave() {
+  ionViewDidLeave() {
     this.socket.disconnect();
   }
 
